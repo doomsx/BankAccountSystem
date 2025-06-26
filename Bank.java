@@ -7,7 +7,7 @@ class Bank{
         accounts.add(a);
     }
 
-    public boolean accountsEmpty(){
+    public boolean accountsNotEmpty(){
         if(!accounts.isEmpty()){
             return true;
         }
@@ -15,7 +15,7 @@ class Bank{
     }
 
     public boolean loginAccount (int aNum, int aPin){
-        if(accountsEmpty()) {
+        if(accountsNotEmpty()) {
             for (Account a : accounts){
                 if(aNum == a.getAccountNumber() && aPin == a.getPIN()){
                     return true;

@@ -43,7 +43,7 @@ class Main {
                         break;
 
                     case 2:
-                        if(bank.accountsEmpty()){
+                        if(bank.accountsNotEmpty()){
                             System.out.println("***********************************");
                             System.out.println("Option 2 selected");
                             System.out.println("Login Account");
