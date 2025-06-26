@@ -7,11 +7,22 @@ class Bank{
         accounts.add(a);
     }
 
+    public boolean accountsEmpty(){
+        if(!accounts.isEmpty()){
+            return true;
+        }
+        return false;
+    }
+
     public boolean loginAccount (int aNum, int aPin){
-        for (Account a : accounts){
-            if(aNum == a.getAccountNumber() && aPin == a.getPIN()){
-                return true;
+        if(accountsEmpty()) {
+            for (Account a : accounts){
+                if(aNum == a.getAccountNumber() && aPin == a.getPIN()){
+                    return true;
+                }
             }
+        } else {
+            return false;
         }
         return false;
     }
@@ -47,7 +58,7 @@ class Bank{
     public boolean deposit(int aNum, float money){
         for(Account a : accounts){
             if(aNum == a.getAccountNumber()){
-                a.setBalance(money);
+                a.setBalance(a.getBalance() + money);
                 return true;
             }
         }
